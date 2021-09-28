@@ -1,0 +1,45 @@
+﻿@model mvc_project_practice.Models.ApplicationType
+<head>
+    <title style="color:indigo">@ViewData["Title"] Create your record</title>
+</head>
+<form method="post" asp-action="Create">
+    <div class="border p-3">
+        <div class="form_group row">
+            <h1 class="text-info pl-3">Add Record List</h1>
+        </div>
+        <div class="row">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="col-8">
+                <div class="form-group row">
+                    <div class="col-4">
+                        <label asp-for="AppName"></label>
+                    </div>
+                    <div class="col-8">
+                        <input asp-for="AppName" class="form-control" />
+                        <span asp-validation-for="AppName" class="text-danger"></span>
+                    </div>
+                </div>
+               
+                <div class="form-group row">
+                    <div class="col-8 offset-4 row">
+                        <div class="col">
+                            <input type="submit" class="btn btn-info w-100" value="Create" />
+                        </div>
+                        <div class="col">
+                            <a asp-action="Type" class="btn btn-success w-100"><i class="fas fa-long-arrow-alt-left"></i>&nbsp; Back</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+@section scripts{
+    @{ <partial name="_ValidationScriptsPartial" />}
+
+ }
+
+
+
+
+
